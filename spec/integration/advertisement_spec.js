@@ -23,7 +23,6 @@ describe("routes: advertisements", () => {
          });
       });
    });
-
  
    describe("GET /advertisements", () => {
       it("should return a status code of 200 and all advertisements", (done) => {
