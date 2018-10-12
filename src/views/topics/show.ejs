@@ -9,11 +9,17 @@
     <main class="container">
       <%- include('../partials/messages.ejs') -%>
       <h1><%= topic.title %></h1>
-        <a href="/topics/<%= topic.id %>/edit" class="btn btn-warning">Edit</a>
+      
+      <% if (currentUser) { %>
         <a href="/topics/<%= topic.id %>/posts/new" class="btn btn-success">New Post</a>
-        <form style="display:initial" action="/topics/<%= topic.id %>/destroy" method="post">
-          <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
+        <% if (currentUser.isAdmin()) { %>
+          <a href="/topics/<%= topic.id %>/edit" class="btn btn-warning">Edit</a>
+          <form style="display:initial" action="/topics/<%= topic.id %>/destroy" method="post">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        <% } %>
+      <% } %>
+
       <p><%= topic.description %></p>
       <hr>
       <h1>Posts</h1>
@@ -22,7 +28,7 @@
         <li class="list-group-item">
           <a href="/topics/<%= topic.id %>/posts/<%= post.id %>"><%= post.title %></a>
         </li>
-        <% }) %>
+        <% }) %> 
       </ul>
     </main>
 
