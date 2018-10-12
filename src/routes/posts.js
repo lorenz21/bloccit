@@ -18,6 +18,6 @@ router.post("/topics/:topicId/posts/create",
 
 router.post("/topics/:topicId/posts/:id/update", validation.validatePosts, postController.update);
 
-router.post("/topics/:topidId/posts/:id/destroy", postController.destroy);
+router.post("/topics/:topicId/posts/:id/destroy", postController.destroy);
 
 module.exports = router;
