@@ -5,10 +5,12 @@ module.exports = {
       const advertisementRoutes = require("../routes/advertisements");
       const postRoutes = require("../routes/posts");
       const flairRoutes = require("../routes/flairs");
+      const userRoutes = require("../routes/users");
       app.use(staticRoutes);
       app.use(topicRoutes);
       app.use(advertisementRoutes);
       app.use(postRoutes);
       app.use(flairRoutes);
+      app.use(userRoutes);
    }
 }
