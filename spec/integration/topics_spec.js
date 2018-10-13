@@ -25,7 +25,7 @@ describe("routes : topics", () => {
       })
     });
   });
-
+  // Define admin user context
   describe("admin user performing CRUD actions for Topic", () => {
 
     beforeEach((done) => {  // before each suite in admin context
@@ -177,7 +177,7 @@ describe("routes : topics", () => {
 
   }); //end context for admin user
 
-  // context of member user
+  // Define member user context
   describe("member user performing CRUD actions for Topic", () => {
 
     beforeEach((done) => {  // before each suite in admin context
@@ -322,6 +322,6 @@ describe("routes : topics", () => {
 
     });
 
-  });
+  }); //end context for member user
 
 });

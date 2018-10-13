@@ -51,7 +51,6 @@ module.exports = {
         if(err){
           res.redirect(500, `/topics/${req.params.topicId}/posts/${req.params.id}`);
         } else {
-          console.log(req.params);
           res.redirect(303, `/topics/${req.params.topicId}`);
         }
       });
