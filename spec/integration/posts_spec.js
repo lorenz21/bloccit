@@ -75,10 +75,10 @@ describe("routes : posts", () => {
     });
 
   });
-  // End User Context
+  // End Guest User Context
 
   // Member User Context
-  describe("admin user performing CRUD actions for Topic", () => {
+  describe("member user performing CRUD actions for Topic", () => {
 
     beforeEach((done) => {
       User.create({
@@ -87,10 +87,10 @@ describe("routes : posts", () => {
         role: "member"
       })
       .then((user) => {
-        request.get({         // mock authentication
+        request.get({         
           url: "http://localhost:3000/auth/fake",
           form: {
-            role: user.role,     // mock authenticate as admin user
+            role: user.role,     
             userId: user.id,
             email: user.email
           }

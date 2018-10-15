@@ -10,7 +10,7 @@
       <%- include('../partials/messages.ejs') -%>
       <h1><%= post.title %></h1>
 
-      <% if (currentUser) { %> 
+      <% if (currentUser && currentUser.id === post.userId || currentUser.isAdmin()) { %> 
         <a href="/topics/<%= post.topicId %>/posts/<%= post.id %>/edit" class="btn btn-warning">Edit</a>
         <% if (currentUser.isAdmin()) { %>
           <form style="display:initial" action="/topics/<%= post.topicId %>/posts/<%= post.id %>/destroy" method="post">
@@ -20,6 +20,18 @@
       <% } %>
 
       <p><%= post.body %></p>
+      <section id="comment-form">
+        <% if(currentUser) { %>
+          <%- include('../comments/new.ejs') -%>
+        <% } %>
+      </section>
+      <section id="comment-list">
+        <% if(post.comments) { %>
+          <% post.comments.forEach((comment) => { %>
+            <%- include('../comments/show.ejs', {comment}) -%>
+          <% }) %>
+        <% } %>
+      </section>
     </main>
 
     <%- include('../partials/baseScripts.ejs') -%>
