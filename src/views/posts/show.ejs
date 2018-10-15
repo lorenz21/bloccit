@@ -10,7 +10,13 @@
   
       <main class="container">
         <%- include('../partials/messages.ejs') -%>
-        <h1><%= post.title %></h1>
+
+        <div style="display: flex; align-items:center;">
+          <h1><%= post.title %></h1>
+          <% if(currentUser) { %>
+            <%- include('../votes/voting.ejs') -%>
+          <% } %>
+        </div>
   
         <% if (currentUser) { %> 
           <% if (currentUser.id === post.userId || currentUser.isAdmin()) { %>
