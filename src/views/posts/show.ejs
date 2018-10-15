@@ -20,6 +20,7 @@
             </form>
           <% } %>
         <% } %>
+        <p><%= post.body %></p>
         <section id="comment-form">
    
           <% if(currentUser) { %>
@@ -35,7 +36,6 @@
             <% }) %>
           <% } %>
          </section>
-        <p><%= post.body %></p>
       </main>
 
       <%- include('../partials/baseScripts.ejs') -%>
