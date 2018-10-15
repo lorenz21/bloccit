@@ -20,10 +20,24 @@
             </form>
           <% } %>
         <% } %>
-  
+        <section id="comment-form">
+   
+          <% if(currentUser) { %>
+            <% include ../comments/new.ejs %>
+          <% } %>
+         </section>
+   
+         <section id="comment-list">
+          <% if(post.comments) { %>
+            <% post.comments.forEach((comment) => { %>
+      
+              <%- include("../comments/show.ejs", {comment}) %>
+            <% }) %>
+          <% } %>
+         </section>
         <p><%= post.body %></p>
       </main>
-  
+
       <%- include('../partials/baseScripts.ejs') -%>
   
     </body>
