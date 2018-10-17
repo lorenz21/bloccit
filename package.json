@@ -19,7 +19,7 @@
   "homepage": "https://github.com/lorenz21/bloccit#readme",
   "devDependencies": {
     "faker": "^4.1.0",
-    "jasmine": "^3.1.0",
+    "jasmine": "^3.0.0",
     "request": "^2.83.0"
   },
   "dependencies": {
