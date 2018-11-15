@@ -12,15 +12,15 @@
       <form action="/topics/<%= topic.id %>/update" method="post">
         <div class="form-group">
           <label for="title">Topic title</label>
-          <input value="<%= topic.title %>" type="text" class="form-control" name="title" aria-describedby="titleHelp" placeholder="Enter Title">
+          <input value="<%= topic.title %>" type="text" class="form-control bg-dark text-light" name="title" aria-describedby="titleHelp" placeholder="Enter Title">
           <small class="text-muted" id="titleHelp">title must be 5 or more characters in length.</small>
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea rows="4" class="form-control" name="description" placeholder="Enter Description"><%= topic.description %></textarea>
+          <textarea rows="4" class="form-control bg-dark text-light" name="description" placeholder="Enter Description"><%= topic.description %></textarea>
           <small class="text-muted" id="descriptionHelp">description must be 10 or more characters in length.</small>
         </div>
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-dark">Update</button>
       </form>
     </main>
 

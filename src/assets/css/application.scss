@@ -1,0 +1,19 @@
+// Custom styles for theme
+$theme-colors: (
+   "primary": #EDE580,
+   "danger": #D35269,
+   "success": #44B559,
+   "warning": #F36F4C
+);
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+   padding-top: 54px;
+   background-color: #EDE580;
+   font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+   margin-top: 10px;
+}

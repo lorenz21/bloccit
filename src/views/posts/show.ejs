@@ -17,7 +17,7 @@
             <%- include('../votes/voting.ejs') -%>
           <% } %>
         </div>
-  
+        <p><%= post.body %></p>
         <% if (currentUser) { %> 
           <% if (currentUser.id === post.userId || currentUser.isAdmin()) { %>
             <a href="/topics/<%= post.topicId %>/posts/<%= post.id %>/edit" class="btn btn-warning">Edit</a>
@@ -30,7 +30,6 @@
         <% if(currentUser) { %>
           <%- include('../favorites/favoriting.ejs') -%>
         <% } %>
-        <p><%= post.body %></p>
         <section id="comment-form">
    
           <% if(currentUser) { %>
